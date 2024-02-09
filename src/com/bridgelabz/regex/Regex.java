@@ -17,12 +17,21 @@ class Regex{
         String mail = scanner.nextLine();
 
         if (isFirstName(fname))
-            System.out.println("Valid");
+            System.out.println("Valid First Name");
         else
-            System.out.println("Invalid");
+            System.out.println("Invalid First Name");
+        if(isLastName(lname))
+            System.out.println("Valid Last Name");
+        else
+            System.out.println("Invalid Last Name");
     }
         private static boolean isFirstName(String fname)
         {   String regex = "^[A-Z][a-zA-Z]{2,}$";
             return Pattern.matches(regex,fname);
+        }
+        private static boolean isLastName(String lname)
+        {
+            String regex = "^[A-Z][a-zA-Z]{2,}$";
+            return Pattern.matches(regex,lname);
         }
     }
