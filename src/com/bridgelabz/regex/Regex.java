@@ -59,7 +59,7 @@ class Regex{
             return Pattern.matches(regex,phno);
         }
         private static boolean ispwd(String pwd){
-       String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*//d).{8,}$";
+       String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*//d)(?=.*[!@#$%^&*()_+=<>?]).{8,}$";
            // String regex = "^[a-zA-Z0-9._\\-!@#$%&]{8,}$";
         return Pattern.matches(regex,pwd);
         }
