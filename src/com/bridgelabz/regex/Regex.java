@@ -5,10 +5,10 @@ import java.util.Scanner;
 class Regex{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter THe First Name");
+        System.out.println("Enter THe First Name(Caps First Letter)");
         String fname = scanner.nextLine();
 
-        System.out.println("Enter Last Name");
+        System.out.println("Enter Last Name(Caps first Letter)");
         String lname = scanner.nextLine();
 
         System.out.println("Enter Phone number");
@@ -46,5 +46,9 @@ class Regex{
         private static boolean isEmail(String mail){
             String regex = "^[A-Za-z0-9._%+-]+@[a-zA-z0-9.-]\\.[a-zA-Z]{2,}";
             return Pattern.matches(regex,mail);
+        }
+        private static boolean isphno(String phno){
+            String regex = "^[+]{1}[91]{2}\\s[0-9]{10}$";
+            return Pattern.matches(regex,phno);
         }
     }
