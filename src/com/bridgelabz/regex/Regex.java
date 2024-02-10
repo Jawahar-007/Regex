@@ -17,6 +17,9 @@ class Regex{
         System.out.println("Enter Email ID");
         String mail = scanner.nextLine();
 
+        System.out.println("Enter Passsword");
+        String pwd = scanner.nextLine();
+
         if (isFirstName(fname))
             System.out.println("Valid First Name");
         else
@@ -33,6 +36,10 @@ class Regex{
             System.out.println("Valid PHone Number");
         else
             System.out.println("Invalid Phone number");
+        if(ispwd(pwd))
+            System.out.println("Valid Password");
+        else
+            System.out.println("Onvalid Password");
     }
         private static boolean isFirstName(String fname)
         {   String regex = "^[A-Z][a-zA-Z]{2,}$";
@@ -44,11 +51,16 @@ class Regex{
             return Pattern.matches(regex,lname);
         }
         private static boolean isEmail(String mail){
-            String regex = "^[A-Za-z0-9._%+-]+@[a-zA-z0-9.-]\\.[a-zA-Z]{2,}";
+            String regex = "^[A-Za-z0-9._%+-]+@[a-zA-z0-9.-]+\\.[a-zA-Z]{2,}";
             return Pattern.matches(regex,mail);
         }
         private static boolean isphno(String phno){
-            String regex = "^[+]{1}[91]{2}\\s[0-9]{10}$";
+            String regex = "^[+][91]+\\s[0-9]{10}$";
             return Pattern.matches(regex,phno);
+        }
+        private static boolean ispwd(String pwd){
+       // String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*//d).{8,}$";
+            String regex = "^[a-zA-Z0-9._\\-!@#$%&]{8,}$";
+        return Pattern.matches(regex,pwd);
         }
     }
