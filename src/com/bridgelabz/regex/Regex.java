@@ -29,7 +29,7 @@ class Regex {
         Matcher matcher = pattern.matcher(lname);
        // Checking if the matcher finds a complete match of the regex in the input string
         if (matcher.matches())
-            System.out.println("Valid First Name : " + lname);
+            System.out.println("Valid last Name : " + lname);
         else
             throw new CustomisedException("Invalid Last Name! :" + lname);
     }
@@ -52,7 +52,7 @@ class Regex {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Email ID");
         String mail = scanner.nextLine();
-        String regex = "^(?!.*(\\.\\.|.\\|\\.\\d|@\\.|@.*@|\\.com\\.com|@.*[^\\w\\d.-]|/.$|[^\\w\\d@.+-]))[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+        String regex = "^(?!.*(\\.\\.|.\\|\\./d|@\\.|@.*@|\\.com\\.com|@.*[^/w/d.-]|/.$|[^\\w\\d@.+-]))[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(mail);
         if (matcher.matches())
